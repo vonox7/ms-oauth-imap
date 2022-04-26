@@ -9,7 +9,7 @@ fun String.encodeBase64() = String(Base64.getEncoder().encode(this.toByteArray()
 How to do a full oauth login (doesn't work right now):
 
 1. Request auth CODE: Open the following line in the browser (and sign into studodev tenant):
- https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4db28b70-a5eb-43de-b1f7-4796a3f93875&response_type=code&redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient&response_mode=query&scope=offline_access%20https%3A%2F%2Fgraph.microsoft.com%2FIMAP.AccessAsUser.All%20https%3A%2F%2Fgraph.microsoft.com%2FSMTP.Send
+ https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=4db28b70-a5eb-43de-b1f7-4796a3f93875&response_type=code&redirect_uri=https://login.microsoftonline.com/common/oauth2/nativeclient&response_mode=query&scope=offline_access%20https%3A%2F%2Foutlook.office.com%2FIMAP.AccessAsUser.All%20https%3A%2F%2Foutlook.office.com%2FSMTP.Send
 
 2. Complete auth in browser and copy query parameter `code` from url
 
@@ -25,7 +25,7 @@ curl --location --request POST 'https://login.microsoftonline.com/225b1136-6ecb-
 Example response:
 {
     "token_type": "Bearer",
-    "scope": "profile openid email https://graph.microsoft.com/IMAP.AccessAsUser.All https://graph.microsoft.com/SMTP.Send https://graph.microsoft.com/.default",
+    "scope": "profile openid email https://outlook.office.com/IMAP.AccessAsUser.All https://outlook.office.com/SMTP.Send https://graph.microsoft.com/.default",
     "expires_in": 4369,
     "ext_expires_in": 4369,
     "access_token": "eyxxxxxxx"
